@@ -39,6 +39,10 @@ public class ArriendoLocalComida extends Arriendo {
         iva = x;
     }
     
+    /*
+    Si no ponemos este metodo abstracto de la super clase y estamos en la
+    obligaion de ubicarlo
+    */
     @Override
     public void establecerArriendoMensual(){
         double subtotal = obtenerValorAgua() + obtenerValorLuz() + 

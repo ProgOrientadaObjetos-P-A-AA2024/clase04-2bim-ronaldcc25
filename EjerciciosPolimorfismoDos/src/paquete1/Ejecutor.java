@@ -41,10 +41,17 @@ public class Ejecutor {
         arriendoSesiones.establecerValorAmplificacion(20); // en $
         
         listaArriendos.add(arriendoComida);
+        listaArriendos.add(arriendoComida2);
         listaArriendos.add(arriendoComercial);
         listaArriendos.add(arriendoSesiones);
         
         for (int i = 0; i < listaArriendos.size(); i++) {
+            /*
+            la linea de codigo 54 nos muestra que establecer arriendo mensual
+            no sabe con certeza que es lo que va a recibir pero lo que si sabe
+            es que solo puede aceptar objetos de las clases hijas de la 
+            superclase
+            */
             listaArriendos.get(i).establecerArriendoMensual(); // se llama al 
                                                             // métodos abstracto
             System.out.println(listaArriendos.get(i));
