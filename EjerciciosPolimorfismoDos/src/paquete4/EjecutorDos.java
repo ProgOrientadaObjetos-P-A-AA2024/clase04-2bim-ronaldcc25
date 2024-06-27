@@ -112,7 +112,10 @@ public class EjecutorDos {
             listaArriendos.get(i).establecerArriendoMensual();
         }
 
-        CentroComercial centro = new CentroComercial("La Pradera",
+        System.out.print("\nIngrese el nombre del Centro Comercial: ");
+        String centroComercial = leer.nextLine();
+
+        CentroComercial centro = new CentroComercial(centroComercial,
                 listaArriendos);
         centro.establecerTotalArriendosBaseMensual();
         centro.establecerTotalArriendosFinalMensual();

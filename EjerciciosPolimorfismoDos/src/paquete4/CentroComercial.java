@@ -64,7 +64,7 @@ public class CentroComercial {
 
     @Override
     public String toString() {
-        String cadena = String.format("Datos Centro Comercial\n"
+        String cadena = String.format("\nDatos Centro Comercial\n"
                 + "Nombre: %s\n"
                 + "Lista de Locales\n\n", obtenerNombre());
 
