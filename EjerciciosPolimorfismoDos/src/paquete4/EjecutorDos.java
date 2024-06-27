@@ -17,39 +17,96 @@ public class EjecutorDos {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
-        int opc;
+        String nombre;
+        double cuotaB;
+        int iva;
+        double valAgua;
+        double valLuz;
+        double valFijo;
+        double valSillas;
+        double valAmplificacion;
         ArrayList<Arriendo> listaArriendos = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        System.out.print("Ingrese el numero de Locales de Comida va a ingresar: ");
+        int localComida = leer.nextInt();
+        leer.nextLine();
+
+        for (int i = 0; i < localComida; i++) {
+
+            System.out.print("\nIngrese el nombre del Local de Comida: ");
+            nombre = leer.nextLine();
+
+            System.out.print("Ingrese la cuota base: ");
+            cuotaB = leer.nextDouble();
+
+            System.out.print("Ingrese el IVA: ");
+            iva = leer.nextInt();
+
+            System.out.print("Ingrese el valor del agua: ");
+            valAgua = leer.nextDouble();
+
+            System.out.print("Ingrese el valor de la luz: ");
+            valLuz = leer.nextDouble();
+            leer.nextLine();
+
             ArriendoLocalComida arriendoComida = new ArriendoLocalComida(
-                    "Christian Shepherd", 300);
-            arriendoComida.establecerIva(10); // en porcentaje
-            arriendoComida.establecerValorAgua(20.2); // en $
-            arriendoComida.establecerValorLuz(40.2); // en $
+                    nombre, cuotaB);
+
+            arriendoComida.establecerIva(iva); // en porcentaje
+            arriendoComida.establecerValorAgua(valAgua); // en $
+            arriendoComida.establecerValorLuz(valLuz); // en $
+            listaArriendos.add(arriendoComida);
         }
-        
-        for (int i = 0; i < 10; i++) {
+
+        System.out.print("\nIngrese el numero de Locales de Comida va a ingresar: ");
+        int localComercial = leer.nextInt();
+        leer.nextLine();
+
+        for (int i = 0; i < localComercial; i++) {
+
+            System.out.print("\nIngrese el nombre del Local Comercial: ");
+            nombre = leer.nextLine();
+
+            System.out.print("Ingrese la cuota base: ");
+            cuotaB = leer.nextDouble();
+
+            System.out.print("Ingrese el valor adicional Fijo: ");
+            valFijo = leer.nextDouble();
+            leer.nextLine();
+
             ArriendoLocalComercial arriendoComercial = new ArriendoLocalComercial(
-                "Andrew Schroeder", 400);
-        arriendoComercial.establecerValorAdicionalFijo(100); // en $
+                    nombre, cuotaB);
+
+            arriendoComercial.establecerValorAdicionalFijo(valFijo); // en $
+            listaArriendos.add(arriendoComercial);
         }
-        
-        for (int i = 0; i < 10; i++) {
+
+        System.out.print("\nIngrese el numero de Locales de Sesiones va a ingresar: ");
+        int localSesiones = leer.nextInt();
+        leer.nextLine();
+
+        for (int i = 0; i < localSesiones; i++) {
+            
+            System.out.print("\nIngrese el nombre del Local de Sesiones: ");
+            nombre = leer.nextLine();
+
+            System.out.print("Ingrese la cuota base: ");
+            cuotaB = leer.nextDouble();
+
+            System.out.print("Ingrese el valor sillas: ");
+            valSillas = leer.nextDouble();
+
+            System.out.print("Ingrese el valor amplificacion: ");
+            valAmplificacion = leer.nextDouble();
+            leer.nextLine();
+
             ArriendoLocalSesiones arriendoSesiones = new ArriendoLocalSesiones(
-                "Angela Watson", 350);
-        arriendoSesiones.establecerValorSillas(10); // en $
-        arriendoSesiones.establecerValorAmplificacion(20); // en $
+                    nombre, cuotaB);
+            arriendoSesiones.establecerValorSillas(valSillas); // en $
+            arriendoSesiones.establecerValorAmplificacion(valAmplificacion); // en $
 
-        listaArriendos.add(arriendoComida);
-        listaArriendos.add(arriendoComercial);
-        listaArriendos.add(arriendoSesiones);
+            listaArriendos.add(arriendoSesiones);
         }
-
-        
-
-        
-
-        
 
         for (int i = 0; i < listaArriendos.size(); i++) {
             listaArriendos.get(i).establecerArriendoMensual();
@@ -62,5 +119,5 @@ public class EjecutorDos {
         System.out.println(centro);
 
     }
-   
+
 }
